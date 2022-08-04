@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+}
+
+/* Common */
+
+#main {
+
+}
+
+#header {
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+

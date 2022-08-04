@@ -1,0 +1,248 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*
+    1. Vị trí
+    2. Kích thước
+    3. Màu sắc
+    4. Kiểu dáng
+*/
+
+/* Common */
+
+.row {
+    margin-right: -8px;
+    margin-left: -8px;
+ }
+
+ .row::after {
+    content: "";
+    display: block;
+    clear: both;
+ }
+
+ .col {
+    float: left;
+    padding-right: 8px;
+    padding-left: 8px;
+ }
+
+ .col-full {
+    width: 100%;
+ }
+
+ .col-half {
+    width: 50%;
+ }
+
+ .col-four {
+    width: 25;
+ }
+
+/* Main */
+
+#main {
+
+}
+
+#header {
+    height: 50px;
+    background-color:#fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+/* Begin: Nav */
+#nav {
+    display: inline-block;
+    }
+
+#nav .subnav {
+    list-style-type: none;
+}
+
+#nav  > li {
+    display: inline-block;
+}
+
+#nav li{
+    position: relative;
+}
+
+#nav > li > a {
+    color: #000;
+    text-transform: uppercase;
+}
+
+#nav li a {
+    line-height: 50px;
+    padding: 0 24px;
+    display: block;
+    text-decoration: none;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    display: none;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav .subnav a {
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#nav .nav-arrow-down {
+    font-size: 12px;
+}
+/* End: Nav */
+
+/* Begin: Logo */
+
+.logo {
+    display: flex;
+    margin: auto;
+}
+
+.logo .logo-pnj {
+    height: 40px;
+}
+
+/* End: Logo */
+
+/* Begin: Icon */
+
+#header .icon-heading .btn{
+    padding: 0 21px;
+    float: right;
+    cursor: pointer;
+}
+
+#header .btn:hover .icon-btn {
+    
+    color: #c48c46;
+}
+
+#header .icon-heading .icon-btn {
+    font-size: 20px;
+    line-height: 50px;
+    color: #000;
+}
+
+/* End: Icon */
+
+/* Begin: Footer */
+#footer {
+    height: 250px;
+    background-color: #333;
+}
+#footer #Copyright {
+    padding-top: 50px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+/* End: Footer */
+
+#slider {
+	position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url(../img/slider.png) top center / cover no-repeat;	
+}
+.wrapper{
+  position: absolute;
+  width: 330px;
+  padding: 2rem 0 1rem 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  bottom: 50%;
+}
+h1{
+  font-size: 2rem;
+  color: #07001f;
+}
+p{
+  margin-bottom: 1.7rem;
+}
+form input{
+  width: 85%;
+  outline: none;
+  border: none;
+  background: #dfe9f5;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.recover{
+  text-align: right;
+  font-size: 0.8rem;
+  margin: 0.2rem 1.7rem 0 0;
+}
+.recover a{
+  text-decoration: none;
+  color:#06C;
+}
+button{
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding: 8px 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 85%;
+  background: tomato;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover{
+  background: rgba(122, 30, 30, 0.767);
+}
+
+.not-member{
+  font-size: 0.8rem;
+  margin-top: 1.4rem;
+}
+.not-member a{
+  color: tomato;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+

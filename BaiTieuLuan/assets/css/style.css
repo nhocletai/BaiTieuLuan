@@ -1,0 +1,549 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*
+    1. Vị trí
+    2. Kích thước
+    3. Màu sắc
+    4. Kiểu dáng
+*/
+
+/* Common */
+
+.clear {
+    clear: both;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.row {
+    margin-right: -8px;
+    margin-left: -8px;
+ }
+
+ .row::after {
+    content: "";
+    display: block;
+    clear: both;
+ }
+
+ .col {
+    float: left;
+    padding-right: 8px;
+    padding-left: 8px;
+ }
+
+ .col-full {
+    width: 100%;
+ }
+
+ .col-half {
+    width: 50%;
+ }
+
+ .col-three {
+     width: 33.33333%;
+ }
+
+ .col-four {
+    width: 25%;
+ }
+
+ .col-five {
+    width: 20%;
+ }
+
+/* Main */
+
+#main {
+
+}
+
+#header {
+    height: 50px;
+    background-color:#fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+/* Begin: Nav */
+#nav {
+    display: inline-block;
+    }
+
+#nav .subnav {
+    list-style-type: none;
+}
+
+#nav  > li {
+    display: inline-block;
+}
+
+#nav li{
+    position: relative;
+}
+
+#nav > li > a {
+    color: #000;
+    text-transform: uppercase;
+}
+
+#nav li a {
+    line-height: 50px;
+    padding: 0 24px;
+    display: block;
+    text-decoration: none;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    display: none;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#nav .subnav a {
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#nav .nav-arrow-down {
+    font-size: 12px;
+}
+/* End: Nav */
+
+/* Begin: Logo */
+
+.logo {
+    display: flex;
+    margin: auto;
+}
+
+.logo .logo-pnj {
+    height: 40px;
+}
+
+/* End: Logo */
+
+/* Begin: Icon */
+
+#header .icon-heading .btn{
+    padding: 0 21px;
+    float: right;
+    cursor: pointer;
+}
+
+#header .btn:hover .icon-btn {
+    
+    color: #c48c46;
+}
+
+#header .icon-heading .icon-btn {
+    font-size: 20px;
+    line-height: 50px;
+    color: #000;
+}
+
+/* End: Icon */
+
+/* Begin: Slider */
+/* #slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 36%;
+    background: url(../img/slider1.jpg) top center / cover no-repeat;
+    background-size: 100%;
+}
+
+#slider .text-content {
+    position: absolute;
+    bottom: 70px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding: 32px;
+    background-color: rgba(0, 0, 0, .3)
+}
+#slider .text-heading {
+    font-size: 50px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 2);
+}
+#slider .text-description {
+    font-size: 25px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 2);
+    margin-top: 25px;
+    letter-spacing: 5px;
+} */
+
+input,
+textarea,
+select,
+button {
+    outline: none;
+}
+input {
+    line-height: normal;
+}
+label,
+button {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+img {
+    display: block;
+}
+
+.slider {
+    position: relative;
+}
+.slider-next,
+.slider-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+.slider-next {
+    right: -25px;
+}
+.slider-prev {
+    left: -25px;
+}
+.slider-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-57%);
+    bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    z-index: 10;
+}
+.slider-dots li {
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 100rem;
+    background-color: #999;
+    cursor: pointer;
+    transition: background-color 0.25s linear;
+}
+.slider-dots li.active {
+    background-color: white;
+}
+.slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.slider-main {
+    display: flex;
+    position: relative;
+    transition: transform 0.25s linear;
+    height: 100%;
+}
+.slider-item {
+    height: 100%;
+    width: 100%;
+    flex: 1 0 100%;
+    user-select: none;
+}
+.slider-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.text-trend {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.list-img {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-angle-l,
+.icon-angle-r {
+    font-size: 22px;
+    color: #8d8c8c;
+}
+
+.icon-angle-l {
+    margin-right: 50px;
+}
+
+.icon-angle-r {
+    margin-left: 50px
+}
+
+
+.list-img .bn {
+    width: 550px;
+    margin: 0 10px 0 10px;
+    float: left;
+}
+
+/* Begin: Content */
+
+.body-img {
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    padding: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .04)
+}
+
+.img {
+    width: 100%;
+    display: block;
+}
+
+.text-category {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.places-list {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.place-img {
+    width: 100%;
+    display: block;
+}
+
+.place-body {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 170px;
+    height: 260px;
+}
+
+.place-body:hover {
+    width: 180px;
+    height: 280px;
+    cursor: pointer;
+}
+
+.place-heading {
+    font-size: 13px;
+}
+
+.place-sell {
+    margin-top: 10px;
+    font-weight: 700;
+    text-align: center;
+    color: #c48c46;
+}
+
+.discount {
+    text-decoration: line-through #000;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.place-desc {
+    margin-top: 15px;
+}
+
+.banner {
+    margin: 50px;
+}
+
+.banner img {
+    display: flex;
+    margin: auto;
+    border-radius: 20px;
+}
+
+/* End: Content */
+
+/* Begin: Footer */
+
+#footer-main {
+    margin-top: 50px;
+    background: url(../img/Background/background3.jpg) top center / cover no-repeat;
+    height: 500px;
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.list-text {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-heading,
+.text-body {
+    padding: 16px;
+}
+
+.text-body {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.logo-f {
+    display: flex;
+    margin: auto;
+}
+
+.logo-f .logo-pnj {
+    height: 40px;
+}
+
+.text-heading {
+    font-weight: 600;
+}
+
+.list-icon {
+    margin-top: 15px;
+}
+
+.list-icon .icon-f {
+    margin-right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.list-icon .icon-f:hover {
+    opacity: 0.8;
+}
+
+
+/* End: Footer */
+
+/* Begin: Modal */
+
+/* .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.modal-main {
+    background: #fff;
+    width: 900px;
+    min-height: 200px;
+    position: relative;
+}
+
+.modal-heading {
+    background: #78A6ED;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.modal .icon-heading {
+    margin-right: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-cart-SP,
+.modal-cart-G,
+.modal-cart-SL {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.modal-cart-SP{
+
+}
+
+.modal-cart-G
+.modal-cart-SL */
+
+/* End: Footer */
